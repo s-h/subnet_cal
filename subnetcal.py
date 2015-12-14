@@ -25,7 +25,7 @@ def init(ip,mask):
     print host_start
     print host_end
 
-def switch_mask(num):
+def lengthTOdotint(num):
     text='0' * 32
     tag = '1'
     text=num * tag + text[num:]
@@ -39,8 +39,15 @@ def switch_mask(num):
         decmask.append(str((int(binmask[i],2))))
     decmask='.'.join(decmask)
     return decmask
-
+def dotintTOlength(dotint):
+    text = dotint.split(".")
+    m=''
+    for i in range(0,4):
+        n= bin(int(text[i])).strip('0b')
+        print n
+        m += n
+    return len(m)
 
 ip = str(sys.argv[1])
-mask = switch_mask(int(sys.argv[2]))
+mask = lengthTOdotint(int(sys.argv[2]))
 init(ip,mask)
