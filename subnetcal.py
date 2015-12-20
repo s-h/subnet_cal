@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#test
+# -*- coding: utf-8 -*- 
 import copy
 import sys
 import re
@@ -55,9 +55,7 @@ def helps():
     print sys.argv[0] + " ip mask"
     print "e.g " + sys.argv[0] +" 192.168.1.0 24"
     print sys.argv[0] + " 192.160.1.0 255.255.255.0"
-def printList(alist):
-    for i in alist:
-        print i,
+
 regexip=r'(?<![\.\d])(?:\d{1,3}\.){3}\d{1,3}(?![\.\d])'
 if re.search(regexip,sys.argv[1]):
     ip = str(sys.argv[1])
